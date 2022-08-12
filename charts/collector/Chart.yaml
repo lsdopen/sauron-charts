@@ -1,0 +1,17 @@
+apiVersion: v2
+name: sauron-collector
+version: "1.0.0"
+appVersion: "v1.0.0-develop.47"
+description: A Helm chart for Sauron Collector
+keywords:
+  - sauron
+  - collector
+  - observability
+home: https://github.com/lsdopen/sauron-charts
+sources:
+  - https://github.com/lsdopen
+maintainers:
+  - name: LSD open
+    email: support@lsdopen.io
+    url: https://lsdopen.io
+deprecated: false
