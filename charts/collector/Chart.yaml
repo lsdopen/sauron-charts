@@ -1,7 +1,7 @@
 apiVersion: v2
 name: sauron-collector
-version: "v1.0.0-develop.47"
-appVersion: "v1.0.0-develop.47"
+version: "0.2.0"
+appVersion: "v1.0.0-develop.50"
 description: A Helm chart for Sauron Collector
 keywords:
   - sauron

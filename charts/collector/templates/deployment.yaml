@@ -21,6 +21,15 @@ spec:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          {{- if .Values.proxy.enabled }}
+          env:
+            - name: HTTP_PROXY
+              value: {{- if .Values.proxy.http_proxy }}
+            - name: HTTPS_PROXY
+              value: {{- if .Values.proxy.https_proxy }}
+            - name: NO_PROXY
+              value: {{- if .Values.proxy.no_proxy }}
+          {{- end }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           volumeMounts:
