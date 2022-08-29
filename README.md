@@ -49,3 +49,17 @@ helm install sauron/collector --set config.cluster.name="<Name of cluster>" --se
 | `config.log.level`              | Log level of Collector. Defaults to `error`.               | `error` |
 | `config.log.console`            | Type of output. Defaults to structured logging if `false`. | `false` |
 
+
+### Collection Metrics
+
+| Name                                  | Description                                    | Value         |
+| ------------------------------------- | ---------------------------------------------- | ------------- |
+| `config.collect.version.enabled`      | Enable the collection of cluster version.      | `true`        |
+| `config.collect.version.cron`         | Default cron schedule to collect version.      | `0 4 * * *`   |
+| `config.collect.deprecations.enabled` | Enable the collection of cluster deprecations. | `true`        |
+| `config.collect.deprecations.cron`    | Default cron schedule to collect deprecations. | `0 5 * * *`   |
+| `config.collect.nodes.enabled`        | Enable the collection of cluster nodes.        | `true`        |
+| `config.collect.nodes.cron`           | Default cron schedule to collect nodes.        | `0 * * * *`   |
+| `config.collect.heartbeat.enabled`    | Enable the sending of cluster heartbeat.       | `true`        |
+| `config.collect.heartbeat.cron`       | Default cron schedule to send heartbeat.       | `*/5 * * * *` |
+

@@ -55,9 +55,33 @@ proxy:
 ## @param config.log.level Log level of Collector. Defaults to `error`.
 ## @param config.log.console Type of output. Defaults to structured logging if `false`.
 
+## @section Collection Metrics
+#
+## @param config.collect.version.enabled Enable the collection of cluster version.
+## @param config.collect.version.cron Default cron schedule to collect version.
+## @param config.collect.deprecations.enabled Enable the collection of cluster deprecations.
+## @param config.collect.deprecations.cron Default cron schedule to collect deprecations.
+## @param config.collect.nodes.enabled Enable the collection of cluster nodes.
+## @param config.collect.nodes.cron Default cron schedule to collect nodes.
+## @param config.collect.heartbeat.enabled Enable the sending of cluster heartbeat.
+## @param config.collect.heartbeat.cron Default cron schedule to send heartbeat.
+
 config:
   cluster:
     name: ""
+  collect:
+    version:
+      enabled: true
+      cron: "0 4 * * *"
+    deprecations:
+      enabled: true
+      cron: "0 5 * * *"
+    nodes:
+      enabled: true
+      cron: "0 * * * *"
+    heartbeat:
+      enabled: true
+      cron: "*/5 * * * *"
   receiver:
     url: ""
     port: "443"
