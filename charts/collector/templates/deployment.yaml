@@ -24,11 +24,11 @@ spec:
           {{- if .Values.proxy.enabled }}
           env:
             - name: HTTP_PROXY
-              value: {{- if .Values.proxy.http_proxy }}
+              value: {{- .Values.proxy.http_proxy }}
             - name: HTTPS_PROXY
-              value: {{- if .Values.proxy.https_proxy }}
+              value: {{- .Values.proxy.https_proxy }}
             - name: NO_PROXY
-              value: {{- if .Values.proxy.no_proxy }}
+              value: {{- .Values.proxy.no_proxy }}
           {{- end }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
