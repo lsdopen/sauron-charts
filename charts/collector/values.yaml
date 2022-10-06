@@ -57,13 +57,13 @@ proxy:
 
 ## @section Collection Metrics
 #
-## @param config.collect.version.enabled Enable the collection of cluster version.
+## @param config.collect.version.enabled Enable the collection of cluster version. This gets the cluster server version and sends only the version info.
 ## @param config.collect.version.cron Default cron schedule to collect version.
-## @param config.collect.deprecations.enabled Enable the collection of cluster deprecations.
+## @param config.collect.deprecations.enabled Enable the collection of cluster deprecations. This gets a list of deprecated APIs being used on the cluster and not the specific resource that is being used.
 ## @param config.collect.deprecations.cron Default cron schedule to collect deprecations.
-## @param config.collect.nodes.enabled Enable the collection of cluster nodes.
+## @param config.collect.nodes.enabled Enable the collection of cluster nodes. This sends a break down of nodes on the cluster along with CPU/Memory utilisation and the current status of the node.
 ## @param config.collect.nodes.cron Default cron schedule to collect nodes.
-## @param config.collect.heartbeat.enabled Enable the sending of cluster heartbeat.
+## @param config.collect.heartbeat.enabled Enable the sending of cluster heartbeat. This sends a ping to the central Sauron receiver to verify that a collector is still active.
 ## @param config.collect.heartbeat.cron Default cron schedule to send heartbeat.
 
 config:

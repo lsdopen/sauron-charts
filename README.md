@@ -26,7 +26,6 @@ helm install sauron/collector --set config.cluster.name="<Name of cluster>" --se
 | `resources.requests.cpu`    | CPU request for container.                               | `50m`                      |
 | `resources.requests.memory` | Memory requests for container.                           | `128Mi`                    |
 
-
 ### Proxy
 
 | Name                | Description                                                   | Value   |
@@ -35,7 +34,6 @@ helm install sauron/collector --set config.cluster.name="<Name of cluster>" --se
 | `proxy.http_proxy`  | Proxy to use for http requests.                               | `""`    |
 | `proxy.https_proxy` | Proxy to use for https requests.                              | `""`    |
 | `proxy.no_proxy`    | Requests that should avoid using the proxy.                   | `""`    |
-
 
 ### Config
 
@@ -49,7 +47,6 @@ helm install sauron/collector --set config.cluster.name="<Name of cluster>" --se
 | `config.log.level`              | Log level of Collector. Defaults to `error`.               | `error` |
 | `config.log.console`            | Type of output. Defaults to structured logging if `false`. | `false` |
 
-
 ### Collection Metrics
 
 | Name                                  | Description                                    | Value         |
@@ -62,4 +59,3 @@ helm install sauron/collector --set config.cluster.name="<Name of cluster>" --se
 | `config.collect.nodes.cron`           | Default cron schedule to collect nodes.        | `0 * * * *`   |
 | `config.collect.heartbeat.enabled`    | Enable the sending of cluster heartbeat.       | `true`        |
 | `config.collect.heartbeat.cron`       | Default cron schedule to send heartbeat.       | `*/5 * * * *` |
-
