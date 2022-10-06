@@ -26,6 +26,7 @@ helm install sauron/collector --set config.cluster.name="<Name of cluster>" --se
 | `resources.requests.cpu`    | CPU request for container.                               | `50m`                      |
 | `resources.requests.memory` | Memory requests for container.                           | `128Mi`                    |
 
+
 ### Proxy
 
 | Name                | Description                                                   | Value   |
@@ -34,6 +35,7 @@ helm install sauron/collector --set config.cluster.name="<Name of cluster>" --se
 | `proxy.http_proxy`  | Proxy to use for http requests.                               | `""`    |
 | `proxy.https_proxy` | Proxy to use for https requests.                              | `""`    |
 | `proxy.no_proxy`    | Requests that should avoid using the proxy.                   | `""`    |
+
 
 ### Config
 
@@ -47,15 +49,17 @@ helm install sauron/collector --set config.cluster.name="<Name of cluster>" --se
 | `config.log.level`              | Log level of Collector. Defaults to `error`.               | `error` |
 | `config.log.console`            | Type of output. Defaults to structured logging if `false`. | `false` |
 
+
 ### Collection Metrics
 
-| Name                                  | Description                                    | Value         |
-| ------------------------------------- | ---------------------------------------------- | ------------- |
-| `config.collect.version.enabled`      | Enable the collection of cluster version.      | `true`        |
-| `config.collect.version.cron`         | Default cron schedule to collect version.      | `0 4 * * *`   |
-| `config.collect.deprecations.enabled` | Enable the collection of cluster deprecations. | `true`        |
-| `config.collect.deprecations.cron`    | Default cron schedule to collect deprecations. | `0 5 * * *`   |
-| `config.collect.nodes.enabled`        | Enable the collection of cluster nodes.        | `true`        |
-| `config.collect.nodes.cron`           | Default cron schedule to collect nodes.        | `0 * * * *`   |
-| `config.collect.heartbeat.enabled`    | Enable the sending of cluster heartbeat.       | `true`        |
-| `config.collect.heartbeat.cron`       | Default cron schedule to send heartbeat.       | `*/5 * * * *` |
+| Name                                  | Description                                                                                                                                                    | Value         |
+| ------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
+| `config.collect.version.enabled`      | Enable the collection of cluster version. This gets the cluster server version and sends only the version info.                                                | `true`        |
+| `config.collect.version.cron`         | Default cron schedule to collect version.                                                                                                                      | `0 4 * * *`   |
+| `config.collect.deprecations.enabled` | Enable the collection of cluster deprecations. This gets a list of deprecated APIs being used on the cluster and not the specific resource that is being used. | `true`        |
+| `config.collect.deprecations.cron`    | Default cron schedule to collect deprecations.                                                                                                                 | `0 5 * * *`   |
+| `config.collect.nodes.enabled`        | Enable the collection of cluster nodes. This sends a break down of nodes on the cluster along with CPU/Memory utilisation and the current status of the node.  | `true`        |
+| `config.collect.nodes.cron`           | Default cron schedule to collect nodes.                                                                                                                        | `0 * * * *`   |
+| `config.collect.heartbeat.enabled`    | Enable the sending of cluster heartbeat. This sends a ping to the central Sauron receiver to verify that a collector is still active.                          | `true`        |
+| `config.collect.heartbeat.cron`       | Default cron schedule to send heartbeat.                                                                                                                       | `*/5 * * * *` |
+
