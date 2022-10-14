@@ -12,7 +12,7 @@ spec:
   template:
     metadata:
       annotations:
-        checksum/secrets: {{ include (print $.Template.BasePath "/secrets.yaml") . | sha256sum }}
+        checksum/secrets: {{ include (print $.Template.BasePath "/configmaps.yaml") . | sha256sum }}
       labels:
         {{- include "chart.selectorLabels" . | nindent 8 }}
     spec:
