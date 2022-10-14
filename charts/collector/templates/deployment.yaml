@@ -16,7 +16,7 @@ spec:
       labels:
         {{- include "chart.selectorLabels" . | nindent 8 }}
     spec:
-      serviceAccountName: {{ include "chart.serviceAccountName" . }}
+      serviceAccount: {{ include "chart.serviceAccountName" . }}
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
@@ -37,5 +37,5 @@ spec:
             mountPath: "/app/config"
       volumes:
       - name: {{ include "chart.fullname" . }}-config
-        secret:
-          secretName: {{ include "chart.fullname" . }}-config
+        configMap:
+          configMapName: {{ include "chart.fullname" . }}-config

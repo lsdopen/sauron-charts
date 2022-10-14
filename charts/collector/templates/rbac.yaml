@@ -4,19 +4,16 @@ metadata:
   name: {{ include "chart.fullname" . }}
 rules:
   - apiGroups:
-      - "*"
+      - ""
     resources:
-      - "*"
+      - "nodes"
     verbs:
       - get
       - list
-      - watch
   - nonResourceURLs:
-    - '*'
+    - '/metrics'
     verbs:
       - get
-      - list
-      - watch
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
@@ -28,5 +25,5 @@ roleRef:
   name: {{ include "chart.fullname" . }}
 subjects:
   - kind: ServiceAccount
-    name: collector
-    namespace: collector-dev
+    name: {{ include "chart.serviceAccountName" . }}
+    namespace: {{ .Release.Namespace }}
