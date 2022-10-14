@@ -3,6 +3,26 @@ entries:
   sauron-collector:
   - apiVersion: v2
     appVersion: v1.1.0
+    created: "2022-10-14T13:22:24.989613743Z"
+    description: A Helm chart for Sauron Collector
+    digest: 4629fbc02931442981c0b8a42c10b5fe80b724b633a47ac56981f2df129713bb
+    home: https://github.com/lsdopen/sauron-charts
+    keywords:
+    - sauron
+    - collector
+    - observability
+    maintainers:
+    - email: support@lsdopen.io
+      name: LSD open
+      url: https://lsdopen.io
+    name: sauron-collector
+    sources:
+    - https://github.com/lsdopen
+    urls:
+    - https://github.com/lsdopen/sauron-charts/releases/download/sauron-collector-1.2.3/sauron-collector-1.2.3.tgz
+    version: 1.2.3
+  - apiVersion: v2
+    appVersion: v1.1.0
     created: "2022-10-14T13:17:29.75379479Z"
     description: A Helm chart for Sauron Collector
     digest: 6ec567b94b243846951708cc5447bb61b471ae19660442216198b8cd0b2b536a
@@ -181,4 +201,4 @@ entries:
     urls:
     - https://github.com/lsdopen/sauron-charts/releases/download/sauron-collector-0.2.0/sauron-collector-0.2.0.tgz
     version: 0.2.0
-generated: "2022-10-14T13:17:29.753835992Z"
+generated: "2022-10-14T13:22:24.989727144Z"
