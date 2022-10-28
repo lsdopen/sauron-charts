@@ -67,8 +67,6 @@ proxy:
 ## @param config.collect.heartbeat.cron Default cron schedule to send heartbeat.
 
 config:
-  cluster:
-    name: ""
   collect:
     version:
       enabled: true
