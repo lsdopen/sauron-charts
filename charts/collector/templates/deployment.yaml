@@ -17,10 +17,10 @@ spec:
         {{- include "chart.selectorLabels" . | nindent 8 }}
     spec:
       serviceAccount: {{ include "chart.serviceAccountName" . }}
-      securityContext:
-        allowPrivilegeEscalation: false
       containers:
         - name: {{ .Chart.Name }}
+          securityContext:
+            allowPrivilegeEscalation: false
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           {{- if .Values.proxy.enabled }}
