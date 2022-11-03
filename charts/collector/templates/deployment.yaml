@@ -12,15 +12,18 @@ spec:
   template:
     metadata:
       annotations:
-        checksum/secrets: {{ include (print $.Template.BasePath "/configmaps.yaml") . | sha256sum }}
+        checksum/configmaps: {{ include (print $.Template.BasePath "/configmaps.yaml") . | sha256sum }}
       labels:
         {{- include "chart.selectorLabels" . | nindent 8 }}
     spec:
       serviceAccount: {{ include "chart.serviceAccountName" . }}
+      securityContext:
+        allowPrivilegeEscalation: false
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          runAsUser: 1001
           {{- if .Values.proxy.enabled }}
           env:
             - name: HTTP_PROXY
