@@ -23,7 +23,6 @@ spec:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
-          runAsUser: 1001
           {{- if .Values.proxy.enabled }}
           env:
             - name: HTTP_PROXY
