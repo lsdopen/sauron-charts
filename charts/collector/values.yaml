@@ -45,6 +45,15 @@ proxy:
   https_proxy: ""
   no_proxy: ""
 
+## @section Registry Secrets
+#
+## @param imagePullSecret.enabled If the Collector service account needs a registry credential.
+## @param imagePullSecret.name Name of image pull secret to use.
+
+imagePullSecret:
+  enabled: false
+  name: ""
+
 ## @section Config
 #
 ## @param config.cluster.name NB - Name of the cluster that the Collector will announce.
