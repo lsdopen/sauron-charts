@@ -97,3 +97,9 @@ config:
   log:
     level: error
     console: false # Defaults to structured if false
+
+## @param nodeSelector Node selector for the deployment.
+## @param tolerations Node taint tolerations for the deployment.
+
+nodeSelector: {}
+tolerations: []
