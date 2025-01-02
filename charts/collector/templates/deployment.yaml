@@ -21,7 +21,7 @@ spec:
         - name: {{ .Chart.Name }}
           securityContext:
             allowPrivilegeEscalation: false
-          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          image: "{{ .Values.image.registry }}/{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           {{- if .Values.proxy.enabled }}
           env:

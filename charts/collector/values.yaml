@@ -19,6 +19,7 @@ serviceAccount:
   create: true
 
 image:
+  registry: docker.io
   repository: lsdtrip/sauron-collector
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
